@@ -1,0 +1,191 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "PropertyOps® single-page marketing site + consultation request intake (frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build the PropertyOps® single-page homepage with the required section order and operational copy direction.",
+      "acceptanceCriteria": [
+        "Homepage renders all required sections in the specified order.",
+        "Hero section includes the exact headline text: “Standardized Property Operations. Done Right.”",
+        "Hero section includes the provided subheadline and a primary CTA labeled “Request a Service Consultation”.",
+        "How It Works section presents exactly three steps with the provided titles and supporting text.",
+        "Technology & Systems section includes the exact headline “Technology That Supports Operations — Not Replaces People” and clearly states systems support a U.S.-based operations team and do not replace human decision-making or labor.",
+        "Services section contains exactly these three services (no more, no less): Rental Turnover Condition Reports; Minor Turnover Repairs & Punch Lists; Exterior Maintenance Packages.",
+        "Quality Control, Contractor Model, Trust callouts, and Franchise teaser sections are present and reflect the provided content direction without “startup hype” or “AI/futuristic” language."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell that renders the single-page homepage (no additional routes) and wires the primary CTA interaction to open the consultation request UI."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Implement the homepage sections in the exact required order with calm, operational copy and semantic structure; include the hero, how-it-works (3 steps), technology & systems, services (exactly three), quality control, contractor model, trust/differentiators, and franchise teaser."
+        },
+        {
+          "path": "frontend/src/components/sections/HomeSections.tsx",
+          "operation": "create",
+          "description": "Factor homepage content into reusable section components (Hero, HowItWorks, TechnologySystems, Services, QualityControl, ContractorModel, TrustCallouts, FranchiseTeaser) to keep HomePage readable; ensure all required user-facing copy direction is represented."
+        },
+        {
+          "path": "frontend/src/components/SiteHeader.tsx",
+          "operation": "create",
+          "description": "Add a minimal, professional header with brand name and a primary CTA button that triggers the consultation request workflow; compose existing shadcn/ui components (e.g., Button). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/SiteFooter.tsx",
+          "operation": "create",
+          "description": "Add a simple footer with credibility-forward, compliance-friendly positioning statements (no legal guarantees) and a secondary CTA to request a consultation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement an in-flow consultation request form (modal or embedded) with client-side validation, backend submission, and success state.",
+      "acceptanceCriteria": [
+        "Clicking “Request a Service Consultation” reveals a form without leaving the site flow (modal or in-page).",
+        "Form includes, at minimum: name, email, phone (optional), company/portfolio (optional), city/state (optional), request details/message, and a consent/acknowledgement checkbox.",
+        "Client-side validation prevents submission when required fields are missing and shows user-friendly inline errors.",
+        "On successful submission, the UI shows a confirmation message and clears/locks the form to prevent duplicate accidental resubmits.",
+        "Backend persists submitted consultation requests with timestamp and unique ID and exposes a query method suitable for an internal admin view later (even if the admin UI is not built now)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ConsultationRequestDialog.tsx",
+          "operation": "create",
+          "description": "Create a modal-based consultation request UI launched from the homepage CTA; compose shadcn/ui components (e.g., Dialog, Button, Input, Textarea, Checkbox, Label, Alert) to capture required fields, show inline errors, and present a clear success state. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ConsultationRequestForm.tsx",
+          "operation": "create",
+          "description": "Implement the form fields, consent checkbox, validation rules, and submit handling; on success, render a confirmation message and lock/disable resubmission within the same view."
+        },
+        {
+          "path": "frontend/src/hooks/useSubmitConsultationRequest.ts",
+          "operation": "create",
+          "description": "Create a React Query mutation hook that calls the backend actor capability to submit a consultation request; normalize UI-friendly error messages for failed submissions."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Wire the Hero CTA and header CTA to open the consultation request modal/embedded form without navigating away; ensure focus management and accessible labeling for the form trigger."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Apply a clean, modern, professional visual theme (dark blue/slate/white with subtle green accents) using icons and a process/flow visual without AI/robot imagery.",
+      "acceptanceCriteria": [
+        "Site styling consistently uses a neutral palette dominated by dark blue/slate/white with subtle green accents.",
+        "Icons are used in relevant sections (e.g., SOPs/checklists/documentation/QC) and do not include robotic/futuristic motifs.",
+        "At least one process/flow visual (diagram-like) is used to reinforce the operational workflow presentation.",
+        "Typography, spacing, and layout read as “professional/operational” (not playful, neon, or highly stylized)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global styling using Tailwind layers and CSS variables to establish the dark blue/slate/white palette with subtle green accents; ensure consistent typography/spacing for a professional B2B look."
+        },
+        {
+          "path": "frontend/src/components/sections/HomeSections.tsx",
+          "operation": "modify",
+          "description": "Apply consistent section layout, spacing, and iconography patterns; add a diagram-like flow visual presentation around the 3-step How It Works section using the provided generated diagram asset."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add SEO fundamentals (title, meta description, semantic headings, and keyword placement) with calm, operational tone.",
+      "acceptanceCriteria": [
+        "Homepage includes an appropriate HTML document title and meta description aligned with PropertyOps® and the operational positioning.",
+        "Sections use semantic headings (H1 for hero, H2 for major sections).",
+        "Copy naturally incorporates the provided SEO keyword phrases (or close grammatical variants) without keyword stuffing.",
+        "No copy introduces “AI hype” phrasing or flashy tech claims."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Set an SEO-appropriate document title and add a meta description aligned with PropertyOps® positioning (property operations services, documented delivery, standardized workflows)."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Ensure semantic heading structure (single H1 in hero; H2 for major sections) and incorporate the provided SEO keyword phrases naturally throughout the relevant sections while keeping the tone calm and operational."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add credibility-forward, compliance-friendly messaging emphasizing U.S.-based operations support, documented delivery, and standardized processes without legal guarantees.",
+      "acceptanceCriteria": [
+        "Technology section explicitly states operations are supported by internal systems and managed by a U.S.-based operations team.",
+        "Website emphasizes standardized workflows, digital checklists, and photo documentation as part of documented delivery.",
+        "Copy avoids legal/immigration guarantees (e.g., does not claim approval outcomes) while remaining credibility-focused."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/HomeSections.tsx",
+          "operation": "modify",
+          "description": "Refine Technology & Systems, Quality Control, and Trust/Differentiators copy blocks to explicitly state U.S.-based operations team support, documented delivery (workflows, checklists, photo documentation), and avoid legal/immigration guarantees."
+        },
+        {
+          "path": "frontend/src/components/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Add a brief, compliance-friendly credibility note reinforcing standardized processes and documented delivery, avoiding guarantees or legal claims."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add the generated brand visuals as static assets and use them in the hero, how-it-works, quality control, and trust sections (no backend image routing).",
+      "acceptanceCriteria": [
+        "All generated images are placed under frontend/public/assets/generated and referenced directly by the frontend.",
+        "Icons appear in at least: How It Works, Technology & Systems, Quality Control, and Trust/Differentiators sections.",
+        "At least one diagram/flow graphic is displayed in the How It Works section (or adjacent) to visualize the 3-step process."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/icon-shield-check.dim_256x256.png",
+          "operation": "create",
+          "description": "Add the generated static asset at the exact path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/public/assets/generated/icon-checklist.dim_256x256.png",
+          "operation": "create",
+          "description": "Add the generated static asset at the exact path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/public/assets/generated/icon-photo-doc.dim_256x256.png",
+          "operation": "create",
+          "description": "Add the generated static asset at the exact path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/public/assets/generated/icon-qc-clipboard.dim_256x256.png",
+          "operation": "create",
+          "description": "Add the generated static asset at the exact path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/public/assets/generated/diagram-how-it-works.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated static diagram asset at the exact path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/public/assets/generated/hero-bg.dim_2400x1200.png",
+          "operation": "create",
+          "description": "Add the generated static hero background asset at the exact path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/src/components/sections/HomeSections.tsx",
+          "operation": "modify",
+          "description": "Reference the generated assets directly from the frontend (no backend) and place them in the appropriate sections: hero background (frontend/public/assets/generated/hero-bg.dim_2400x1200.png), how-it-works diagram (frontend/public/assets/generated/diagram-how-it-works.dim_1600x900.png), and icons across How It Works / Technology & Systems / Quality Control / Trust (frontend/public/assets/generated/icon-shield-check.dim_256x256.png, frontend/public/assets/generated/icon-checklist.dim_256x256.png, frontend/public/assets/generated/icon-photo-doc.dim_256x256.png, frontend/public/assets/generated/icon-qc-clipboard.dim_256x256.png)."
+        }
+      ]
+    }
+  ]
+}

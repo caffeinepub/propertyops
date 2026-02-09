@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Motoko actor implementing access-controlled user profiles and a consultation request system with admin-only retrieval and clearing.",
+  "feature_evidence.json": "Feature evidence report mapping product requirements to frontend files, components, and test IDs.",
+  "frontend-file-summaries.txt": "Prewritten summaries of various frontend files for reference and build planning.",
+  "frontend/index.css": "Global Tailwind-based style sheet defining brand color tokens and light/dark mode variables.",
+  "frontend/index.html": "HTML entry point setting page metadata and loading the React application.",
+  "frontend/src/App.tsx": "Main React app component rendering the HomePage.",
+  "frontend/src/components/ConsultationRequestDialog.tsx": "Modal dialog wrapper that displays the consultation request form.",
+  "frontend/src/components/ConsultationRequestForm.tsx": "Form component handling validation, submission to backend, and a success confirmation state.",
+  "frontend/src/components/sections/HomeSections.tsx": "React sections for the homepage including Hero, How It Works, Technology & Systems, Services, Quality Control, Contractor Model, Trust callouts, and Franchise teaser.",
+  "frontend/src/components/SiteFooter.tsx": "Footer with company description, approach highlights, and a consultation request CTA.",
+  "frontend/src/components/SiteHeader.tsx": "Sticky header displaying branding and a CTA button to open the consultation request form.",
+  "frontend/src/hooks/useActor.ts": "Creates and caches a backend actor based on the user’s Internet Identity and refreshes related queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides Internet Identity authentication context, including loading, login, logout, and identity management utilities.",
+  "frontend/src/hooks/useQueries.ts": "Exposes a mutation hook that submits consultation requests through the backend actor and invalidates related queries.",
+  "frontend/src/index.css": "Defines global Tailwind layers and custom CSS variables for theming, including brand colors and utility classes.",
+  "frontend/src/main.tsx": "Bootstraps the React app with React Query and Internet Identity providers and loads global styles.",
+  "frontend/src/pages/HomePage.tsx": "Renders the homepage layout, sections, and consultation request dialog with open-state control.",
+  "frontend/src/utils/urlParams.ts": "Utility functions for reading, persisting, and clearing URL parameters using both query strings and hash routing.",
+  "frontend/tailwind.config.js": "Tailwind configuration enabling custom colors, animations, typography, and brand styling extensions.",
+  "project_state.json": "Tracks project metadata, requirements, features, design direction, and image needs for the PropertyOps website."
+}

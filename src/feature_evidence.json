@@ -1,0 +1,128 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-single-page-marketing-website-homepage-for-propertyops-with-the-exact-section-structure-and-user-facing-copy-direction-provided-hero-headline-subheadline-cta-how-it-works-3-steps-technology-systems-ops-supporting-tech-explicitly-not-replacing-people-services-exactly-three-services-quality-control-contractor-model-trust-differentiators-callouts-and-franchise-teaser",
+      "featureTitle": "Create a single-page marketing website homepage for PropertyOps® with the exact section structure and user-facing copy direction provided: Hero (headline, subheadline, CTA), How It Works (3 steps), Technology & Systems (ops-supporting tech, explicitly not replacing people), Services (exactly three services), Quality Control, Contractor Model, Trust/Differentiators callouts, and Franchise Teaser.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/components/SiteHeader.tsx",
+        "frontend/src/components/sections/HomeSections.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-lead-capture-workflow-for-the-request-a-service-consultation-cta-that-opens-a-consultation-request-form-embedded-section-or-modal-and-submits-the-request-to-the-backend-for-storage-with-a-clear-success-state-and-basic-client-side-validation",
+      "featureTitle": "Implement a lead-capture workflow for the “Request a Service Consultation” CTA that opens a consultation request form (embedded section or modal) and submits the request to the backend for storage, with a clear success state and basic client-side validation.",
+      "files": [
+        "frontend/src/components/ConsultationRequestDialog.tsx",
+        "frontend/src/components/ConsultationRequestForm.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-visual-theme-that-matches-the-provided-design-direction-clean-modern-professional-neutral-palette-dark-blue-slate-white-with-subtle-green-accents-use-icons-for-sops-checklists-documentation-qc-and-process-flow-visuals-avoid-robots-ai-brain-imagery-and-flashy-futuristic-visuals",
+      "featureTitle": "Apply a cohesive visual theme that matches the provided design direction: clean, modern, professional; neutral palette (dark blue, slate, white) with subtle green accents; use icons for SOPs/checklists/documentation/QC and process/flow visuals; avoid robots, “AI brain” imagery, and flashy/futuristic visuals.",
+      "files": [
+        "frontend/src/components/sections/HomeSections.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-seo-fundamentals-for-a-b2b-services-homepage-page-title-meta-description-semantic-headings-and-on-page-keyword-placement-emphasizing-the-provided-seo-keywords-while-keeping-the-tone-calm-and-operational-no-hype-buzzwords",
+      "featureTitle": "Add SEO fundamentals for a B2B services homepage: page title, meta description, semantic headings, and on-page keyword placement emphasizing the provided SEO keywords, while keeping the tone calm and operational (no hype/buzzwords).",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-include-credibility-forward-compliance-friendly-messaging-consistent-with-the-brief-u-s-based-operations-team-documented-delivery-standardized-processes-suitable-for-investors-franchise-prospects-and-immigration-authorities-without-adding-legal-claims-or-guarantees",
+      "featureTitle": "Include credibility-forward, compliance-friendly messaging consistent with the brief (U.S.-based operations team, documented delivery, standardized processes) suitable for investors, franchise prospects, and immigration authorities, without adding legal claims or guarantees.",
+      "files": [
+        "frontend/src/components/SiteFooter.tsx",
+        "frontend/src/components/sections/HomeSections.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-generated-brand-visuals-icons-diagram-hero-graphic-as-static-frontend-assets-and-use-them-in-the-appropriate-sections-hero-how-it-works-quality-control-trust-callouts-without-routing-image-delivery-through-the-backend",
+      "featureTitle": "Render generated brand visuals (icons/diagram/hero graphic) as static frontend assets and use them in the appropriate sections (hero, how-it-works, quality control, trust callouts), without routing image delivery through the backend.",
+      "files": [
+        "frontend/src/components/sections/HomeSections.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

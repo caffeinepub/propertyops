@@ -1,0 +1,116 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-09T14:01:41.750Z",
+  "summary": "Diff adds a single-page PropertyOps® homepage with section orchestration, a modal consultation request form with client-side validation, backend storage/query endpoints for consultation requests, global styling/theme tokens, and basic SEO in index.html. However, several requirements are either not evidenced in the diff (due to truncation) or not implemented (notably timestamps and generated icon assets usage). Diff also introduces unrequested admin/access-control and user profile functionality and appears to touch immutable hook files.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Technology & Systems section includes the exact headline “Technology That Supports Operations — Not Replaces People”.",
+      "reason": "The TechnologySystemsSection content is truncated; the required exact headline text is not visible in the provided diff summary, so implementation cannot be confirmed.",
+      "evidence": [
+        "frontend/src/components/sections/HomeSections.tsx (truncated)"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "How It Works section presents exactly three steps with the provided titles and supporting text.",
+      "reason": "Although three steps are present, the BuildRequest requires the provided (exact) titles and supporting text; the diff shows different step titles/text but does not prove they match the provided copy direction.",
+      "evidence": [
+        "frontend/src/components/sections/HomeSections.tsx"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "Services section contains exactly these three services (no more, no less): Rental Turnover Condition Reports; Minor Turnover Repairs & Punch Lists; Exterior Maintenance Packages.",
+      "reason": "The ServicesSection implementation is not shown (section file is truncated), so the exact set/count of services cannot be verified from the diff summary.",
+      "evidence": [
+        "frontend/src/components/sections/HomeSections.tsx (truncated)",
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "requirement": "Backend persists submitted consultation requests with timestamp and unique ID.",
+      "reason": "Backend stores an incrementing Nat id but no timestamp field is present in ConsultationRequest or captured during submit.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "All generated images are placed under frontend/public/assets/generated and referenced directly by the frontend.",
+      "reason": "Frontend references generated images by path, but the diff summary does not include any added files under frontend/public/assets/generated, so placement cannot be verified.",
+      "evidence": [
+        "frontend/src/components/sections/HomeSections.tsx",
+        "BuildRequest Images required list"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "requirement": "Icons appear in at least: How It Works, Technology & Systems, Quality Control, and Trust/Differentiators sections, and they are the generated icon assets.",
+      "reason": "How It Works uses lucide-react icons (not the required generated PNG icons). Other sections are truncated, and no references to the required generated icon filenames are shown.",
+      "evidence": [
+        "frontend/src/components/sections/HomeSections.tsx (imports lucide-react icons)",
+        "BuildRequest Images required list"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Admin/user access-control system with secret-token initialization, admin-only endpoints, and permission-gated user profile APIs.",
+      "reason": "BuildRequest only requires storing consultation requests on-canister and exposing a query method suitable for future admin view; it does not request user profiles, admin token URL/session handling, or access-control initialization flows.",
+      "evidence": [
+        "backend/main.mo (AccessControl, MixinAuthorization, userProfiles, getCallerUserProfile/saveCallerUserProfile, admin-only get/clearConsultationRequests)",
+        "frontend/src/hooks/useActor.ts (getSecretParameter('caffeineAdminToken'), _initializeAccessControlWithSecret)",
+        "frontend/src/utils/urlParams.ts"
+      ]
+    },
+    {
+      "description": "Admin endpoint to clear consultation requests.",
+      "reason": "Not requested; only storage + query for later admin view is required.",
+      "evidence": [
+        "backend/main.mo (clearConsultationRequests)"
+      ]
+    },
+    {
+      "description": "Footer attribution/link to caffeine.ai and decorative heart icon.",
+      "reason": "Not requested by the BuildRequest.",
+      "evidence": [
+        "frontend/src/components/SiteFooter.tsx"
+      ]
+    },
+    {
+      "description": "Edits/additions to immutable hook/bootstrap files (useActor.ts, useInternetIdentity.ts, main.tsx) despite constraints stating they must not be edited.",
+      "reason": "BuildRequest explicitly lists these as immutable; diff summary includes them among added/changed content, indicating a likely constraint violation or unrequested change.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/main.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ConsultationRequestDialog.tsx",
+    "frontend/src/components/ConsultationRequestForm.tsx",
+    "frontend/src/components/SiteFooter.tsx",
+    "frontend/src/components/SiteHeader.tsx",
+    "frontend/src/components/sections/HomeSections.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

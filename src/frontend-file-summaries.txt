@@ -1,0 +1,13 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the HomePage without routing.",
+  "frontend/src/pages/HomePage.tsx": "Single-page homepage that orchestrates all sections and manages the consultation request dialog state.",
+  "frontend/src/components/SiteHeader.tsx": "Sticky header with PropertyOps® branding and primary CTA button.",
+  "frontend/src/components/SiteFooter.tsx": "Footer with company info, approach highlights, CTA, and caffeine.ai attribution.",
+  "frontend/src/components/sections/HomeSections.tsx": "All homepage sections including Hero, How It Works (with 3 steps), Technology & Systems, Services (exactly 3), Quality Control, Contractor Model, Trust Callouts, and Franchise Teaser with operational copy and generated assets.",
+  "frontend/src/components/ConsultationRequestDialog.tsx": "Modal dialog wrapper for the consultation request form.",
+  "frontend/src/components/ConsultationRequestForm.tsx": "Complete consultation request form with validation, submission handling, and success state.",
+  "frontend/src/hooks/useQueries.ts": "React Query mutation hook for submitting consultation requests to the backend.",
+  "frontend/src/index.css": "Global styles with PropertyOps brand color system (dark navy, slate, white, subtle green) using OKLCH tokens for light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with PropertyOps brand colors and professional design tokens.",
+  "frontend/index.html": "HTML entry point with SEO-optimized title and meta description emphasizing property operations services keywords."
+}

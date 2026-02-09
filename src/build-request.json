@@ -1,0 +1,164 @@
+{
+  "kind": "build_request",
+  "title": "PropertyOps® B2B lead-generation website with operational positioning and consultation request intake",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a single-page marketing website homepage for PropertyOps® with the exact section structure and user-facing copy direction provided: Hero (headline, subheadline, CTA), How It Works (3 steps), Technology & Systems (ops-supporting tech, explicitly not replacing people), Services (exactly three services), Quality Control, Contractor Model, Trust/Differentiators callouts, and Franchise Teaser.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "user-1"
+        ],
+        "quotes": [
+          "Homepage Structure & Copy Direction\nHero Section\n\nHeadline:\nStandardized Property Operations. Done Right.\n\nSubheadline:\nPropertyOps delivers consistent, documented property services through systemized workflows, digital checklists, and vetted local contractors.\n\nCTA:\nRequest a Service Consultation\n\nHow It Works (Core Section)\n\nStep 1: Submit a Request\n...\nStep 2: Systemized Execution\n...\nStep 3: Documented Delivery\n...\n\nTechnology & Systems Section (VERY IMPORTANT)\n\nHeadline:\nTechnology That Supports Operations — Not Replaces People\n...\n\nServices Section\n\nHighlight exactly three core services:\n\nRental Turnover Condition Reports\n\nMinor Turnover Repairs & Punch Lists\n\nExterior Maintenance Packages\n...\n\nQuality Control Section\n...\n\nContractor Model Section\n...\n\nTrust / Differentiator Section\n...\n\nFranchise Teaser (Future-Focused)\n..."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Homepage renders all required sections in the specified order.",
+        "Hero section includes the exact headline text: “Standardized Property Operations. Done Right.”",
+        "Hero section includes the provided subheadline and a primary CTA labeled “Request a Service Consultation”.",
+        "How It Works section presents exactly three steps with the provided titles and supporting text.",
+        "Technology & Systems section includes the exact headline “Technology That Supports Operations — Not Replaces People” and clearly states systems support a U.S.-based operations team and do not replace human decision-making or labor.",
+        "Services section contains exactly these three services (no more, no less): Rental Turnover Condition Reports; Minor Turnover Repairs & Punch Lists; Exterior Maintenance Packages.",
+        "Quality Control, Contractor Model, Trust callouts, and Franchise teaser sections are present and reflect the provided content direction without “startup hype” or “AI/futuristic” language."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a lead-capture workflow for the “Request a Service Consultation” CTA that opens a consultation request form (embedded section or modal) and submits the request to the backend for storage, with a clear success state and basic client-side validation.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "user-1"
+        ],
+        "quotes": [
+          "Primary Goal:\nGenerate inbound leads from property managers, landlords, and real estate operators",
+          "CTA:\nRequest a Service Consultation"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking “Request a Service Consultation” reveals a form without leaving the site flow (modal or in-page).",
+        "Form includes, at minimum: name, email, phone (optional), company/portfolio (optional), city/state (optional), request details/message, and a consent/acknowledgement checkbox.",
+        "Client-side validation prevents submission when required fields are missing and shows user-friendly inline errors.",
+        "On successful submission, the UI shows a confirmation message and clears/locks the form to prevent duplicate accidental resubmits.",
+        "Backend persists submitted consultation requests with timestamp and unique ID and exposes a query method suitable for an internal admin view later (even if the admin UI is not built now)."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Apply a cohesive visual theme that matches the provided design direction: clean, modern, professional; neutral palette (dark blue, slate, white) with subtle green accents; use icons for SOPs/checklists/documentation/QC and process/flow visuals; avoid robots, “AI brain” imagery, and flashy/futuristic visuals.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "user-1"
+        ],
+        "quotes": [
+          "Visual & Design Direction\n\nClean, modern, professional\n\nNeutral colors (dark blue, slate, white, subtle green accents)\n\nIcons for SOPs, checklists, documentation, QC\n\nNo “AI brain,” robots, or futuristic imagery\n\nUse diagrams, flow visuals, and process graphics instead"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Site styling consistently uses a neutral palette dominated by dark blue/slate/white with subtle green accents.",
+        "Icons are used in relevant sections (e.g., SOPs/checklists/documentation/QC) and do not include robotic/futuristic motifs.",
+        "At least one process/flow visual (diagram-like) is used to reinforce the operational workflow presentation.",
+        "Typography, spacing, and layout read as “professional/operational” (not playful, neon, or highly stylized)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add SEO fundamentals for a B2B services homepage: page title, meta description, semantic headings, and on-page keyword placement emphasizing the provided SEO keywords, while keeping the tone calm and operational (no hype/buzzwords).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "user-1"
+        ],
+        "quotes": [
+          "🔹 Tone Guidelines\n\nConfident, calm, operational\n\nNo hype, no buzzwords\n\nFocus on reliability, consistency, and execution",
+          "🔹 SEO Keywords to Emphasize\n\nProperty operations services\n\nRental turnover services\n\nProperty maintenance coordination\n\nProperty inspection documentation\n\nProperty services for landlords\n\nProperty services for property managers"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Homepage includes an appropriate HTML document title and meta description aligned with PropertyOps® and the operational positioning.",
+        "Sections use semantic headings (H1 for hero, H2 for major sections).",
+        "Copy naturally incorporates the provided SEO keyword phrases (or close grammatical variants) without keyword stuffing.",
+        "No copy introduces “AI hype” phrasing or flashy tech claims."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Include credibility-forward, compliance-friendly messaging consistent with the brief (U.S.-based operations team, documented delivery, standardized processes) suitable for investors, franchise prospects, and immigration authorities, without adding legal claims or guarantees.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "user-1"
+        ],
+        "quotes": [
+          "Primary Goal:\n... establishing credibility with investors, franchise prospects, and immigration authorities (E-2 visa compliant).",
+          "Technology & Systems Section (VERY IMPORTANT)\n...\nThese systems assist our U.S.-based operations team...\nTechnology enhances efficiency and reliability but does not replace human decision-making or labor."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Technology section explicitly states operations are supported by internal systems and managed by a U.S.-based operations team.",
+        "Website emphasizes standardized workflows, digital checklists, and photo documentation as part of documented delivery.",
+        "Copy avoids legal/immigration guarantees (e.g., does not claim approval outcomes) while remaining credibility-focused."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Render generated brand visuals (icons/diagram/hero graphic) as static frontend assets and use them in the appropriate sections (hero, how-it-works, quality control, trust callouts), without routing image delivery through the backend.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "user-1"
+        ],
+        "quotes": [
+          "Icons for SOPs, checklists, documentation, QC",
+          "Use diagrams, flow visuals, and process graphics instead"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All generated images are placed under frontend/public/assets/generated and referenced directly by the frontend.",
+        "Icons appear in at least: How It Works, Technology & Systems, Quality Control, and Trust/Differentiators sections.",
+        "At least one diagram/flow graphic is displayed in the How It Works section (or adjacent) to visualize the 3-step process."
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must remain a single Motoko actor (all logic in backend/main.mo).",
+    "Do not edit files under frontend/src/components/ui (compose them instead).",
+    "Do not edit immutable hook/bootstrap files: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx."
+  ],
+  "nonGoals": [
+    "Do not implement third-party authentication providers (only Internet Identity is allowed; not required for this build).",
+    "Do not integrate external CRMs, email/SMS providers, or marketing automation (store leads on-canister only).",
+    "Do not add real-time chat, push notifications, or websockets.",
+    "Do not add payments or subscription checkout."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Minimalist shield-check icon (icon-shield-check.dim_256x256.png)",
+      "Minimalist checklist icon (icon-checklist.dim_256x256.png)",
+      "Minimalist camera/photo documentation icon (icon-photo-doc.dim_256x256.png)",
+      "Minimalist clipboard-quality-control icon (icon-qc-clipboard.dim_256x256.png)",
+      "Clean 3-step process flow diagram illustration in dark blue/slate with subtle green accents, white background (diagram-how-it-works.dim_1600x900.png)",
+      "Abstract operational grid/blueprint-style hero background (no futuristic AI/robots), dark blue/slate with subtle green accent lines (hero-bg.dim_2400x1200.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "Use English for all user-facing website copy.",
+      "Prefer a clean, modern, professional visual style with dark blue/slate/white and subtle green accents; avoid AI/robot/futuristic imagery."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [
+      "Brand: PropertyOps®; positioning: technology-enabled, standardized documented property services delivered via vetted independent contractors + centralized U.S.-based operations team; tone: calm, operational, no hype."
+    ],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        
+        /* PropertyOps Brand Colors - Light Mode */
+        --background: 1 0 0;
+        --foreground: 0.2 0 0;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.2 0 0;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.2 0 0;
+        
+        /* Primary: Dark Navy Blue */
+        --primary: 0.25 0.08 250;
+        --primary-foreground: 0.98 0 0;
+        
+        /* Secondary: Slate */
+        --secondary: 0.92 0.01 250;
+        --secondary-foreground: 0.25 0.08 250;
+        
+        /* Muted: Light Slate */
+        --muted: 0.96 0.005 250;
+        --muted-foreground: 0.5 0.02 250;
+        
+        /* Accent: Subtle Green */
+        --accent: 0.65 0.12 150;
+        --accent-foreground: 0.98 0 0;
+        
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0 0;
+        
+        --border: 0.9 0.01 250;
+        --input: 0.9 0.01 250;
+        --ring: 0.25 0.08 250;
+        
+        /* Brand-specific tokens */
+        --brand-navy: 0.2 0.1 250;
+        --brand-slate: 0.45 0.02 250;
+        --brand-accent: 0.65 0.12 150;
+        --brand-primary: 0.25 0.08 250;
+        --brand-primary-dark: 0.2 0.1 250;
+        --brand-accent-dark: 0.55 0.12 150;
+    }
+
+    .dark {
+        --background: 0.15 0.02 250;
+        --foreground: 0.95 0 0;
+        
+        --card: 0.2 0.02 250;
+        --card-foreground: 0.95 0 0;
+        
+        --popover: 0.18 0.02 250;
+        --popover-foreground: 0.95 0 0;
+        
+        /* Primary: Lighter for dark mode */
+        --primary: 0.7 0.08 250;
+        --primary-foreground: 0.15 0.02 250;
+        
+        --secondary: 0.25 0.02 250;
+        --secondary-foreground: 0.95 0 0;
+        
+        --muted: 0.25 0.02 250;
+        --muted-foreground: 0.65 0.02 250;
+        
+        --accent: 0.7 0.12 150;
+        --accent-foreground: 0.15 0.02 250;
+        
+        --destructive: 0.6 0.22 25;
+        --destructive-foreground: 0.95 0 0;
+        
+        --border: 0.3 0.02 250;
+        --input: 0.3 0.02 250;
+        --ring: 0.7 0.08 250;
+        
+        --brand-navy: 0.2 0.1 250;
+        --brand-slate: 0.45 0.02 250;
+        --brand-accent: 0.7 0.12 150;
+        --brand-primary: 0.7 0.08 250;
+        --brand-primary-dark: 0.6 0.08 250;
+        --brand-accent-dark: 0.6 0.12 150;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}
+
+@layer utilities {
+    .bg-brand-navy {
+        background-color: oklch(var(--brand-navy));
+    }
+    
+    .bg-brand-slate {
+        background-color: oklch(var(--brand-slate));
+    }
+    
+    .bg-brand-accent {
+        background-color: oklch(var(--brand-accent));
+    }
+    
+    .bg-brand-primary {
+        background-color: oklch(var(--brand-primary));
+    }
+    
+    .bg-brand-primary-dark {
+        background-color: oklch(var(--brand-primary-dark));
+    }
+    
+    .bg-brand-accent-dark {
+        background-color: oklch(var(--brand-accent-dark));
+    }
+    
+    .text-brand-accent {
+        color: oklch(var(--brand-accent));
+    }
+    
+    .text-brand-navy {
+        color: oklch(var(--brand-navy));
+    }
+}
